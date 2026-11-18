@@ -1,5 +1,7 @@
-import { ChatPage } from '@/pages/chat/ui/ChatPage'
+import ChatPage from '@/pages/chat/ui/ChatPage'
 
-export function App() {
+const App = () => {
   return <ChatPage />
 }
+
+export default App

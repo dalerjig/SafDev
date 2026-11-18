@@ -1,3 +1,5 @@
-export function ChatList() {
+const ChatList = () => {
   return <div />
 }
+
+export default ChatList

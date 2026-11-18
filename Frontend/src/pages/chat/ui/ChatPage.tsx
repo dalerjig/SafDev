@@ -1,8 +1,8 @@
-import { ChatList } from '@/widgets/chat-list/ui/ChatList'
-import { Conversation } from '@/widgets/conversation/ui/Conversation'
-import { ChatLayout } from './ChatLayout'
+import ChatList from '@/widgets/chat-list/ui/ChatList'
+import Conversation from '@/widgets/conversation/ui/Conversation'
+import ChatLayout from './ChatLayout'
 
-export function ChatPage() {
+const ChatPage = () => {
   return (
     <ChatLayout>
       <ChatList />
@@ -10,3 +10,5 @@ export function ChatPage() {
     </ChatLayout>
   )
 }
+
+export default ChatPage

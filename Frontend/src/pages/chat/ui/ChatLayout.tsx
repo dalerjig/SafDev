@@ -4,6 +4,8 @@ type ChatLayoutProps = {
   children: ReactNode
 }
 
-export function ChatLayout({ children }: ChatLayoutProps) {
+const ChatLayout = ({ children }: ChatLayoutProps) => {
   return <div>{children}</div>
 }
+
+export default ChatLayout

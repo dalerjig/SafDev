@@ -1,3 +1,5 @@
-export function Conversation() {
+const Conversation = () => {
   return <div />
 }
+
+export default Conversation
