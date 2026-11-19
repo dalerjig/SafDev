@@ -13,8 +13,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/rubik": "^5.3.0",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "typestyle": "^2.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
