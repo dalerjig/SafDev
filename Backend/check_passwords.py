@@ -1,5 +1,4 @@
-from app.security import hash_password
-from app.security import verify_password
+from app.security import hash_password, verify_password
 
 passW="Dfrostm/17890_"
 

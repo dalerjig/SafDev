@@ -1,10 +1,11 @@
-from app.security import hash_password
+from getpass import getpass
+
+from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm import Session
+
 from app.db import engine
 from app.models.user import User
-from sqlalchemy.orm import Session
-from getpass import getpass
-from sqlalchemy.exc import IntegrityError
-
+from app.security import hash_password
 
 user=User(public_id=11112111,
           display_name="Sarrah",

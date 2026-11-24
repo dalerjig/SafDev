@@ -1,8 +1,8 @@
-from app.db import engine
-from sqlalchemy.orm import Session
 from sqlalchemy import select
-from app.models.user import User
+from sqlalchemy.orm import Session
 
+from app.db import engine
+from app.models.user import User
 
 with Session(engine) as session:
     users = session.scalars(select(User)).all()
