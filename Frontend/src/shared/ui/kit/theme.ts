@@ -15,6 +15,7 @@ export const darkTheme = {
   primaryHover: '#a0c5be',
   primaryText: '#132b2c',
   accent: '#94d4ca',
+  danger: '#f2aaa5',
   focus: 'rgba(148, 212, 202, 0.18)'
 } as const
 
@@ -39,6 +40,7 @@ export const lightTheme: ThemeColors = {
   primaryHover: '#28564e',
   primaryText: '#ffffff',
   accent: '#286d62',
+  danger: '#a52e35',
   focus: 'rgba(53, 109, 100, 0.15)'
 }
 
@@ -64,6 +66,7 @@ export const color = {
   primaryHover: 'var(--saf-ui-primary-hover, #a0c5be)',
   primaryText: 'var(--saf-ui-primary-text, #132b2c)',
   accent: 'var(--saf-ui-accent, #94d4ca)',
+  danger: 'var(--saf-ui-danger, #f2aaa5)',
   focus: 'var(--saf-ui-focus, rgba(148, 212, 202, 0.18))'
 } as const
 
