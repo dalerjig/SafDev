@@ -76,3 +76,20 @@ def create_session(session: Session, user: User) -> str:
         session.rollback()
         raise
     return token
+
+
+def revoke_session(session: Session, token: str | None) -> None:
+    if token is None:
+        return
+    session_token = hash_session_token(token)
+    user_session = session.scalar(
+        select(UserSession).where(UserSession.token_hash == session_token)
+    )
+    if user_session is None or user_session.revoked_at is not None:
+        return
+    try:
+        user_session.revoked_at = datetime.now(UTC)
+        session.commit()
+    except SQLAlchemyError:
+        session.rollback()
+        raise
