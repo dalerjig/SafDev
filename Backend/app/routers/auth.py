@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.config import settings
 from app.db import get_db
-from app.dependencies.auth import get_current_user
+from app.dependencies.auth import get_current_user, require_trusted_origin
 from app.models.user import User
 from app.schemas.auth import LoginRequest, RegisterRequest
 from app.schemas.user import UserResponse
@@ -18,7 +18,11 @@ from app.services.auth import (
     revoke_session,
 )
 
-router = APIRouter(prefix="/auth", tags=["users"])
+router = APIRouter(
+    prefix="/auth",
+    tags=["users"],
+    dependencies=[Depends(require_trusted_origin)],
+)
 
 
 @router.post("/register", status_code=201, response_model=UserResponse)

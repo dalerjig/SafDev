@@ -14,6 +14,13 @@ class Settings(BaseSettings):
     postgres_port: int = 5432
     session_ttl_seconds: int = 604800
 
+    trusted_origins: list[str] = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ]
+
     model_config = SettingsConfigDict(
         env_file=ENV_PATH,
         env_file_encoding="utf-8",

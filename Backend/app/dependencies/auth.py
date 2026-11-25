@@ -5,10 +5,24 @@ from fastapi import Depends, HTTPException, Request
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from app.config import settings
 from app.db import get_db
 from app.models.session import UserSession
 from app.models.user import User
 from app.security import hash_session_token
+
+
+def require_trusted_origin(request: Request) -> None:
+    if request.method not in {"POST", "PUT", "PATCH", "DELETE"}:
+        return
+
+    origin = request.headers.get("origin")
+
+    if origin not in settings.trusted_origins:
+        raise HTTPException(
+            status_code=403,
+            detail="Недопустимый источник запроса",
+        )
 
 
 def get_current_user(

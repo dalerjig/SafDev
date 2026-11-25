@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import Input from '@/shared/ui/kit/Input'
 import { color, space } from '@/shared/ui/kit/theme'
 import type { ChatContact } from '@/entities/chat/model/types'
@@ -8,9 +9,10 @@ type ChatListProps = {
   users: ChatContact[]
   selectedUserId: string
   onSelectUser: (userId: string) => void
+  footer?: ReactNode
 }
 
-const ChatList = ({ users, selectedUserId, onSelectUser }: ChatListProps) => {
+const ChatList = ({ users, selectedUserId, onSelectUser, footer }: ChatListProps) => {
   return (
     <div className={styles.root}>
       <div className={styles.search}>
@@ -29,6 +31,7 @@ const ChatList = ({ users, selectedUserId, onSelectUser }: ChatListProps) => {
           />
         ))}
       </div>
+      {footer && <div className={styles.footer}>{footer}</div>}
     </div>
   )
 }
@@ -38,7 +41,7 @@ export default ChatList
 const styles = {
   root: style({
     display: 'grid',
-    gridTemplateRows: 'auto minmax(0, 1fr)',
+    gridTemplateRows: 'auto minmax(0, 1fr) auto',
     minWidth: 0,
     minHeight: 0,
     background: color.panel,
@@ -57,5 +60,11 @@ const styles = {
     minWidth: 0,
     overflowY: 'auto',
     padding: space.sm
+  }),
+  footer: style({
+    padding: space.lg,
+    borderTop: `1px solid ${color.border}`,
+    minWidth: 0,
+    $nest: { '@media (max-width: 700px)': { padding: space.sm } }
   })
 }
