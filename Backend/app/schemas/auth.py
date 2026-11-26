@@ -1,4 +1,5 @@
 from typing import Any
+
 from pydantic import BaseModel, ConfigDict, Field, SecretStr, field_validator
 
 
@@ -16,3 +17,8 @@ class RegisterRequest(BaseModel):
     password: SecretStr = Field(min_length=10, max_length=128)
     model_config = ConfigDict(extra="forbid")
     # invite_token: SecretStr
+
+class LoginRequest(BaseModel):
+    public_id: int = Field(ge=100000, le=999999)
+    password: SecretStr = Field(min_length=10, max_length=128)
+    model_config = ConfigDict(extra="forbid")

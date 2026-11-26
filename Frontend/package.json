@@ -17,6 +17,7 @@
     "axios": "^1.21.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-router": "^7.18.7",
     "typestyle": "^2.4.0",
     "zustand": "^5.1.0"
   },

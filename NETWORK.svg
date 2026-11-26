@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000"><title>Адреса и порты SafDev</title><desc>Браузер обращается к Nginx через порт 5173 и к FastAPI через порт 8000. Backend и Alembic обращаются к PostgreSQL по postgres:5432. Прямой доступ к базе предназначен разработчику.</desc><defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#39756c"/></marker></defs><rect width="1400" height="1000" fill="#ffffff"/>
+<text x='55' y='69' font-family='Segoe UI,Arial,sans-serif' font-size='34' font-weight='600' fill='#233834'>SafDev — адреса и порты</text>
+<text x='57' y='106' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#526761'>Windows → WSL2 → Docker · локальный запуск</text>
+<rect x='45' y='145' width='455' height='690' fill='#f8faf9' stroke='#d7e0dc' stroke-width='1.5'/>
+<text x='70' y='184' font-family='Segoe UI,Arial,sans-serif' font-size='21' font-weight='600' fill='#526761'>Windows · браузер и инструменты</text>
+<rect x='650' y='145' width='705' height='690' fill='#f4f8f7' stroke='#d7e0dc' stroke-width='1.5'/>
+<text x='675' y='184' font-family='Segoe UI,Arial,sans-serif' font-size='21' font-weight='600' fill='#526761'>WSL2 · сеть Docker Compose</text>
+<rect x='90' y='225' width='330' height='135' fill='#ffffff' stroke='#b4c8c0' stroke-width='1.5'/>
+<text x='112' y='271' font-family='Segoe UI,Arial,sans-serif' font-size='26' font-weight='600' fill='#233834'>Браузер</text>
+<text x='112' y='309' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#233834'>Получает страницу</text>
+<text x='112' y='338' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#233834'>и выполняет JavaScript</text>
+<rect x='720' y='225' width='570' height='120' fill='#e4efeb' stroke='#9ebfb1' stroke-width='1.5'/>
+<text x='742' y='266' font-family='Segoe UI,Arial,sans-serif' font-size='25' font-weight='600' fill='#233834'>frontend · Nginx</text>
+<text x='742' y='302' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#233834'>Порт 80 внутри контейнера</text>
+<text x='742' y='329' font-family='Segoe UI,Arial,sans-serif' font-size='19' font-weight='400' fill='#233834'>Отдаёт HTML, CSS, JS и изображения</text>
+<rect x='720' y='425' width='570' height='120' fill='#e4efeb' stroke='#9ebfb1' stroke-width='1.5'/>
+<text x='742' y='466' font-family='Segoe UI,Arial,sans-serif' font-size='25' font-weight='600' fill='#233834'>backend · FastAPI + Uvicorn</text>
+<text x='742' y='502' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#233834'>Порт 8000 внутри контейнера</text>
+<text x='742' y='529' font-family='Segoe UI,Arial,sans-serif' font-size='19' font-weight='400' fill='#233834'>Обрабатывает запросы браузера</text>
+<rect x='90' y='610' width='330' height='120' fill='#ffffff' stroke='#b4c8c0' stroke-width='1.5'/>
+<text x='110' y='653' font-family='Segoe UI,Arial,sans-serif' font-size='25' font-weight='600' fill='#233834'>psql / клиент БД</text>
+<text x='110' y='688' font-family='Segoe UI,Arial,sans-serif' font-size='19' font-weight='400' fill='#233834'>Необязательный доступ</text>
+<text x='110' y='716' font-family='Segoe UI,Arial,sans-serif' font-size='19' font-weight='400' fill='#233834'>для разработчика</text>
+<rect x='680' y='670' width='280' height='115' fill='#ffffff' stroke='#b4c8c0' stroke-width='1.5'/>
+<text x='700' y='706' font-family='Segoe UI,Arial,sans-serif' font-size='23' font-weight='600' fill='#233834'>migrate · Alembic</text>
+<text x='700' y='739' font-family='Segoe UI,Arial,sans-serif' font-size='18' font-weight='400' fill='#233834'>Применяет миграции</text>
+<text x='700' y='766' font-family='Segoe UI,Arial,sans-serif' font-size='18' font-weight='400' fill='#233834'>БД: postgres:5432</text>
+<rect x='1010' y='670' width='300' height='115' fill='#e4efeb' stroke='#9ebfb1' stroke-width='1.5'/>
+<text x='1030' y='712' font-family='Segoe UI,Arial,sans-serif' font-size='25' font-weight='600' fill='#233834'>postgres</text>
+<text x='1030' y='747' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#233834'>PostgreSQL · порт 5432</text>
+<polyline points='420,265 720,265' fill='none' stroke='#39756c' stroke-width='2'  marker-end='url(#arrow)'/>
+<rect x='448' y='224' width='245' height='65' fill='#ffffff' stroke='#ffffff' stroke-width='1.5'/>
+<text x='462' y='248' font-family='Segoe UI,Arial,sans-serif' font-size='19' font-weight='400' fill='#233834'>localhost:5173</text>
+<text x='462' y='274' font-family='Segoe UI,Arial,sans-serif' font-size='18' font-weight='400' fill='#526761'>0.0.0.0:5173 → 80</text>
+<polyline points='420,325 570,325 570,485 720,485' fill='none' stroke='#39756c' stroke-width='2'  marker-end='url(#arrow)'/>
+<rect x='445' y='369' width='245' height='65' fill='#ffffff' stroke='#ffffff' stroke-width='1.5'/>
+<text x='462' y='393' font-family='Segoe UI,Arial,sans-serif' font-size='19' font-weight='400' fill='#233834'>localhost:8000</text>
+<text x='462' y='419' font-family='Segoe UI,Arial,sans-serif' font-size='18' font-weight='400' fill='#526761'>8000 → 8000</text>
+<polyline points='1135,545 1135,670' fill='none' stroke='#39756c' stroke-width='2'  marker-end='url(#arrow)'/>
+<text x='1150' y='605' font-family='Segoe UI,Arial,sans-serif' font-size='18' font-weight='400' fill='#39756c'>postgres:5432</text>
+<polyline points='960,727 1010,727' fill='none' stroke='#39756c' stroke-width='2'  marker-end='url(#arrow)'/>
+<polyline points='420,675 565,675 565,810 1160,810 1160,785' fill='none' stroke='#39756c' stroke-width='2' stroke-dasharray='7 5' marker-end='url(#arrow)'/>
+<rect x='575' y='773' width='390' height='35' fill='#ffffff' stroke='#ffffff' stroke-width='1.5'/>
+<text x='585' y='795' font-family='Segoe UI,Arial,sans-serif' font-size='18' font-weight='400' fill='#526761'>127.0.0.1:5432 → 5432</text>
+<text x='58' y='895' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#233834'>5173:80 — публикация на всех интерфейсах WSL; backend и БД — на loopback.</text>
+<text x='58' y='932' font-family='Segoe UI,Arial,sans-serif' font-size='20' font-weight='400' fill='#233834'>Nginx отдаёт файлы. Браузер обращается к API напрямую; Nginx не пересылает эти запросы.</text>
+<text x='58' y='966' font-family='Segoe UI,Arial,sans-serif' font-size='17' font-weight='400' fill='#526761'>25 ноября 2026 · пользователь подтвердил запуск · ручное правило portproxy в Windows удалено</text>
+</svg>

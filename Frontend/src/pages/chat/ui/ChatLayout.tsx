@@ -6,15 +6,13 @@ type ChatLayoutProps = {
   children: ReactNode
 }
 
-const ChatLayout = ({ children }: ChatLayoutProps) => {
+export const ChatLayout = ({ children }: ChatLayoutProps) => {
   return (
     <div className={styles.page}>
       <div className={styles.root}>{children}</div>
     </div>
   )
 }
-
-export default ChatLayout
 
 const styles = {
   page: style({

@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { classes, style } from 'typestyle'
-import Tooltip from './Tooltip'
+import { Tooltip } from './Tooltip'
 import { color, radius, space } from './theme'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -10,7 +10,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   tooltip?: string
 }
 
-const Button = ({
+export const Button = ({
   children,
   variant = 'primary',
   square = false,
@@ -29,8 +29,6 @@ const Button = ({
 
   return tooltip ? <Tooltip content={tooltip}>{button}</Tooltip> : button
 }
-
-export default Button
 
 const styles = {
   root: style({

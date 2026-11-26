@@ -7,7 +7,7 @@ type TooltipProps = {
   content: ReactNode
 }
 
-const Tooltip = ({ children, content }: TooltipProps) => {
+export const Tooltip = ({ children, content }: TooltipProps) => {
   return (
     <div className={styles.root}>
       {children}
@@ -17,8 +17,6 @@ const Tooltip = ({ children, content }: TooltipProps) => {
     </div>
   )
 }
-
-export default Tooltip
 
 const styles = {
   root: style({

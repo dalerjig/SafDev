@@ -1,4 +1,4 @@
-import ListItem from '@/shared/ui/kit/ListItem'
+import { ListItem } from '@/shared/ui/kit/ListItem'
 
 interface ChatItemProps {
   name: string
@@ -9,7 +9,7 @@ interface ChatItemProps {
   onSelect?: () => void
 }
 
-const ChatItem = ({ name, lastMessage, initials, unreadCount = 0, selected = false, onSelect }: ChatItemProps) => {
+export const ChatItem = ({ name, lastMessage, initials, unreadCount = 0, selected = false, onSelect }: ChatItemProps) => {
   return (
     <ListItem
       title={name}
@@ -21,5 +21,3 @@ const ChatItem = ({ name, lastMessage, initials, unreadCount = 0, selected = fal
     />
   )
 }
-
-export default ChatItem

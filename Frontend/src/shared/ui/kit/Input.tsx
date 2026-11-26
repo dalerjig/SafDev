@@ -2,11 +2,9 @@ import type { InputHTMLAttributes } from 'react'
 import { classes, style } from 'typestyle'
 import { color, radius, space } from './theme'
 
-const Input = ({ className, type = 'text', ...rest }: InputHTMLAttributes<HTMLInputElement>) => {
+export const Input = ({ className, type = 'text', ...rest }: InputHTMLAttributes<HTMLInputElement>) => {
   return <input className={classes(styles.root, className)} type={type} {...rest} />
 }
-
-export default Input
 
 const styles = {
   root: style({

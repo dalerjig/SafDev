@@ -6,11 +6,9 @@ type IconProps = {
   size?: number
 }
 
-const Icon = ({ name, size = 20 }: IconProps) => {
+export const Icon = ({ name, size = 20 }: IconProps) => {
   return <div className={classes(styles.root, styles[name])} style={{ '--saf-ui-icon-size': `${size}px` } as CSSProperties} />
 }
-
-export default Icon
 
 const styles = {
   root: style({

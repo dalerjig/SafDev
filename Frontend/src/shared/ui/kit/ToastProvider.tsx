@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { style } from 'typestyle'
-import Toast from './Toast'
+import { Toast } from './Toast'
 import { space } from './theme'
 import { subscribeToasts } from './toast'
 import type { ToastMessage } from './toast'
@@ -10,7 +10,7 @@ type ToastProviderProps = {
   children: ReactNode
 }
 
-const ToastProvider = ({ children }: ToastProviderProps) => {
+export const ToastProvider = ({ children }: ToastProviderProps) => {
   const [notifications, setNotifications] = useState<ToastMessage[]>([])
 
   useEffect(() => {
@@ -34,8 +34,6 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
     </>
   )
 }
-
-export default ToastProvider
 
 const styles = {
   notifications: style({

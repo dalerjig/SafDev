@@ -1,7 +1,8 @@
-from app.config import settings
-from sqlalchemy.engine import URL
 from sqlalchemy import create_engine
+from sqlalchemy.engine import URL
 from sqlalchemy.orm import Session
+
+from app.config import settings
 
 database_url=URL.create(drivername="postgresql+psycopg",
                 username=settings.postgres_user,

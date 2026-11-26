@@ -1,9 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from '@/app/App'
+import { App } from '@/app/App'
 import { cssRule } from 'typestyle'
 import '@fontsource/rubik'
 import '@fontsource/rubik/500.css'
+import { BrowserRouter } from 'react-router'
 
 cssRule('*, *::before, *::after', {
   boxSizing: 'border-box'
@@ -15,6 +16,8 @@ cssRule('body', {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 )
