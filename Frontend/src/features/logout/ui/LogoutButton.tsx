@@ -1,9 +1,9 @@
 import { useShallow } from 'zustand/react/shallow'
 import { style } from 'typestyle'
-import Button from '@/shared/ui/kit/Button'
+import { Button } from '@/shared/ui/kit/Button'
 import useLogoutStore from '../model/useLogoutStore'
 
-const LogoutButton = () => {
+export const LogoutButton = () => {
   const { isLoading, logout } = useLogoutStore(
     useShallow(state => ({ isLoading: state.isLoading, logout: state.logout }))
   )
@@ -14,8 +14,6 @@ const LogoutButton = () => {
     </Button>
   )
 }
-
-export default LogoutButton
 
 const styles = {
   root: style({ width: '100%' })

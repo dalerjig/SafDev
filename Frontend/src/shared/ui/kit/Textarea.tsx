@@ -2,11 +2,9 @@ import type { TextareaHTMLAttributes } from 'react'
 import { classes, style } from 'typestyle'
 import { color, radius, space } from './theme'
 
-const Textarea = ({ className, ...rest }: TextareaHTMLAttributes<HTMLTextAreaElement>) => {
+export const Textarea = ({ className, ...rest }: TextareaHTMLAttributes<HTMLTextAreaElement>) => {
   return <textarea className={classes(styles.root, className)} {...rest} />
 }
-
-export default Textarea
 
 const styles = {
   root: style({

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ChatContact, ChatMessage } from '@/entities/chat/model/types'
-import Button from '@/shared/ui/kit/Button'
-import Flow from '@/shared/ui/kit/Flow'
-import Header from '@/shared/ui/kit/Header'
-import Icon from '@/shared/ui/kit/Icon'
-import Textarea from '@/shared/ui/kit/Textarea'
+import { Button } from '@/shared/ui/kit/Button'
+import { Flow } from '@/shared/ui/kit/Flow'
+import { Header } from '@/shared/ui/kit/Header'
+import { Icon } from '@/shared/ui/kit/Icon'
+import { Textarea } from '@/shared/ui/kit/Textarea'
 import { color, radius, space } from '@/shared/ui/kit/theme'
 import { classes, style } from 'typestyle'
 
@@ -14,7 +14,7 @@ type ConversationProps = {
   onSend: (text: string) => void
 }
 
-const Conversation = ({ user, messages, onSend }: ConversationProps) => {
+export const Conversation = ({ user, messages, onSend }: ConversationProps) => {
   const [draft, setDraft] = useState('')
   const historyRef = useRef<HTMLDivElement>(null)
 
@@ -83,8 +83,6 @@ const Conversation = ({ user, messages, onSend }: ConversationProps) => {
     </div>
   )
 }
-
-export default Conversation
 
 const styles = {
   root: style({

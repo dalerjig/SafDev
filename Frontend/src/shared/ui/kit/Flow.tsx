@@ -10,7 +10,7 @@ type FlowProps = {
   className?: string
 }
 
-const Flow = ({ children, mode = 'horizontal', gap = 8, align = 'stretch', fullWidth = true, className }: FlowProps) => {
+export const Flow = ({ children, mode = 'horizontal', gap = 8, align = 'stretch', fullWidth = true, className }: FlowProps) => {
   return (
     <div
       className={classes(styles.root, styles[mode], alignStyles[align], fullWidth && styles.fullWidth, className)}
@@ -20,8 +20,6 @@ const Flow = ({ children, mode = 'horizontal', gap = 8, align = 'stretch', fullW
     </div>
   )
 }
-
-export default Flow
 
 const styles = {
   root: style({ display: 'flex', minWidth: 0, gap: 'var(--saf-ui-flow-gap, 8px)' }),

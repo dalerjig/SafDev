@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
-import Input from '@/shared/ui/kit/Input'
+import { Input } from '@/shared/ui/kit/Input'
 import { color, space } from '@/shared/ui/kit/theme'
 import type { ChatContact } from '@/entities/chat/model/types'
 import { style } from 'typestyle'
-import ChatItem from './ChatItem'
+import { ChatItem } from './ChatItem'
 
 type ChatListProps = {
   users: ChatContact[]
@@ -12,7 +12,7 @@ type ChatListProps = {
   footer?: ReactNode
 }
 
-const ChatList = ({ users, selectedUserId, onSelectUser, footer }: ChatListProps) => {
+export const ChatList = ({ users, selectedUserId, onSelectUser, footer }: ChatListProps) => {
   return (
     <div className={styles.root}>
       <div className={styles.search}>
@@ -35,8 +35,6 @@ const ChatList = ({ users, selectedUserId, onSelectUser, footer }: ChatListProps
     </div>
   )
 }
-
-export default ChatList
 
 const styles = {
   root: style({

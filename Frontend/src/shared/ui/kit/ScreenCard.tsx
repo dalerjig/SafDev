@@ -6,15 +6,13 @@ type ScreenCardProps = {
   children: ReactNode
 }
 
-const ScreenCard = ({ children }: ScreenCardProps) => {
+export const ScreenCard = ({ children }: ScreenCardProps) => {
   return (
     <div className={styles.root}>
       <div className={styles.card}>{children}</div>
     </div>
   )
 }
-
-export default ScreenCard
 
 const styles = {
   root: style({

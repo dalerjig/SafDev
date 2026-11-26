@@ -1,19 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 import useSessionStore from '@/entities/session/model/useSessionStore'
-import useLoginStore from '@/features/login/model/useLoginStore'
-import useRegisterStore from '@/features/register/model/useRegisterStore'
-import ChatPage from '@/pages/chat/ui/ChatPage'
-import LoginPage from '@/pages/login/ui/LoginPage'
-import RegisterPage from '@/pages/register/ui/RegisterPage'
-import Button from '@/shared/ui/kit/Button'
-import Flow from '@/shared/ui/kit/Flow'
-import ScreenCard from '@/shared/ui/kit/ScreenCard'
-import UiProvider from '@/shared/ui/kit/UiProvider'
-import ToastProvider from '@/shared/ui/kit/ToastProvider'
+import { ChatPage } from '@/pages/chat/ui/ChatPage'
+import { LoginPage } from '@/pages/login/ui/LoginPage'
+import { RegisterPage } from '@/pages/register/ui/RegisterPage'
+import { Button } from '@/shared/ui/kit/Button'
+import { Flow } from '@/shared/ui/kit/Flow'
+import { ScreenCard } from '@/shared/ui/kit/ScreenCard'
+import { UiProvider } from '@/shared/ui/kit/UiProvider'
+import { ToastProvider } from '@/shared/ui/kit/ToastProvider'
+import { Navigate, Route, Routes } from 'react-router'
 
-const App = () => {
-  const [authPage, setAuthPage] = useState<'login' | 'register'>('login')
+export const App = () => {
   const { user, status, error, restoreSession } = useSessionStore(
     useShallow(state => ({
       user: state.user,
@@ -26,19 +24,6 @@ const App = () => {
   useEffect(() => {
     void restoreSession()
   }, [restoreSession])
-
-  const showRegister = () => {
-    useLoginStore.getState().reset()
-    useRegisterStore.getState().reset()
-    setAuthPage('register')
-  }
-
-  const showLogin = (publicId?: number) => {
-    useRegisterStore.getState().reset()
-    useLoginStore.getState().reset()
-    if (publicId !== undefined) useLoginStore.getState().setPublicId(String(publicId))
-    setAuthPage('login')
-  }
 
   const renderScreen = () => {
     if (status === 'idle' || status === 'checking') {
@@ -55,10 +40,20 @@ const App = () => {
         </ScreenCard>
       )
     }
-
-    if (user) return <ChatPage key={user.public_id} />
-    if (authPage === 'register') return <RegisterPage onLogin={showLogin} />
-    return <LoginPage onRegister={showRegister} />
+    return (
+      <Routes>
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/chat" replace /> : <LoginPage />}
+        />
+        <Route
+          path="/register"
+          element={user ? <Navigate to="/chat" replace /> : <RegisterPage />}
+        />
+        <Route path="/chat" element={user ? <ChatPage key={user.public_id} /> : <Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to={user ? '/chat' : '/login'} replace />} />
+      </Routes>
+    )
   }
 
   return (
@@ -67,5 +62,3 @@ const App = () => {
     </UiProvider>
   )
 }
-
-export default App

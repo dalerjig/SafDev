@@ -10,7 +10,7 @@ type UiProviderProps = {
   theme?: Partial<ThemeColors>
 }
 
-const UiProvider = ({ children, locale = 'ru', mode = 'dark', theme }: UiProviderProps) => {
+export const UiProvider = ({ children, locale = 'ru', mode = 'dark', theme }: UiProviderProps) => {
   const variables = Object.fromEntries(
     Object.entries({ ...themes[mode], ...theme }).map(([key, value]) => [
       `--saf-ui-${key.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}`,
@@ -24,8 +24,6 @@ const UiProvider = ({ children, locale = 'ru', mode = 'dark', theme }: UiProvide
     </div>
   )
 }
-
-export default UiProvider
 
 const styles = {
   root: style({

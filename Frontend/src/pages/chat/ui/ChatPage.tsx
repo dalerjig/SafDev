@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { style } from 'typestyle'
 import useSessionStore from '@/entities/session/model/useSessionStore'
-import LogoutButton from '@/features/logout/ui/LogoutButton'
-import Flow from '@/shared/ui/kit/Flow'
+import { LogoutButton } from '@/features/logout/ui/LogoutButton'
+import { Flow } from '@/shared/ui/kit/Flow'
 import { color, space } from '@/shared/ui/kit/theme'
-import ChatList from '@/widgets/chat-list/ui/ChatList'
-import Conversation from '@/widgets/conversation/ui/Conversation'
+import { ChatList } from '@/widgets/chat-list/ui/ChatList'
+import { Conversation } from '@/widgets/conversation/ui/Conversation'
 import type { ChatMessage } from '@/entities/chat/model/types'
 import { mockMessages, mockUsers } from '../model/mockChats'
-import ChatLayout from './ChatLayout'
+import { ChatLayout } from './ChatLayout'
 
-const ChatPage = () => {
+export const ChatPage = () => {
   const currentUser = useSessionStore(state => state.user)
   const [selectedUserId, setSelectedUserId] = useState(mockUsers[0].id)
   const [messagesByUser, setMessagesByUser] = useState(mockMessages)
@@ -67,8 +67,6 @@ const ChatPage = () => {
     </ChatLayout>
   )
 }
-
-export default ChatPage
 
 const styles = {
   profileName: style({

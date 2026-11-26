@@ -1,13 +1,13 @@
 import type { KeyboardEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 import { style } from 'typestyle'
-import Button from '@/shared/ui/kit/Button'
-import Flow from '@/shared/ui/kit/Flow'
-import Input from '@/shared/ui/kit/Input'
+import { Button } from '@/shared/ui/kit/Button'
+import { Flow } from '@/shared/ui/kit/Flow'
+import { Input } from '@/shared/ui/kit/Input'
 import { color, radius, space } from '@/shared/ui/kit/theme'
 import useRegisterStore from '../model/useRegisterStore'
 
-const RegisterForm = () => {
+export const RegisterForm = () => {
   const { displayName, password, isLoading, error, user, setDisplayName, setPassword, register } = useRegisterStore(
     useShallow(state => ({
       displayName: state.displayName,
@@ -73,8 +73,6 @@ const RegisterForm = () => {
     </Flow>
   )
 }
-
-export default RegisterForm
 
 const styles = {
   caption: style({

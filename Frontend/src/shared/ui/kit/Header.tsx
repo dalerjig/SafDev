@@ -9,7 +9,7 @@ type HeaderProps = {
   className?: string
 }
 
-const Header = ({ left, center, right, className }: HeaderProps) => {
+export const Header = ({ left, center, right, className }: HeaderProps) => {
   return (
     <div className={classes(styles.root, className)}>
       <div className={styles.side}>{left}</div>
@@ -18,8 +18,6 @@ const Header = ({ left, center, right, className }: HeaderProps) => {
     </div>
   )
 }
-
-export default Header
 
 const styles = {
   root: style({

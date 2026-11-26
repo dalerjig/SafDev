@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { classes, style } from 'typestyle'
-import Button from './Button'
+import { Button } from './Button'
 import { color, radius, space } from './theme'
 import type { ToastMessage } from './toast'
 
@@ -8,7 +8,7 @@ type ToastProps = ToastMessage & {
   onClose: (id: string) => void
 }
 
-const Toast = ({ id, message, variant, onClose }: ToastProps) => {
+export const Toast = ({ id, message, variant, onClose }: ToastProps) => {
   useEffect(() => {
     const timer = window.setTimeout(() => onClose(id), 6000)
     return () => window.clearTimeout(timer)
@@ -26,8 +26,6 @@ const Toast = ({ id, message, variant, onClose }: ToastProps) => {
     </div>
   )
 }
-
-export default Toast
 
 const styles = {
   root: style({

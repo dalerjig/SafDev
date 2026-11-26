@@ -12,7 +12,7 @@ type ListItemProps = {
   className?: string
 }
 
-const ListItem = ({ title, description, icon, label, selected = false, onSelect, className }: ListItemProps) => {
+export const ListItem = ({ title, description, icon, label, selected = false, onSelect, className }: ListItemProps) => {
   return (
     <div
       className={classes(styles.root, selected && styles.selected, onSelect && styles.clickable, className)}
@@ -34,8 +34,6 @@ const ListItem = ({ title, description, icon, label, selected = false, onSelect,
     </div>
   )
 }
-
-export default ListItem
 
 const styles = {
   root: style({

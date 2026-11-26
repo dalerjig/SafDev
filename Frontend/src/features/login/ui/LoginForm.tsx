@@ -1,13 +1,13 @@
 import type { KeyboardEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 import { style } from 'typestyle'
-import Button from '@/shared/ui/kit/Button'
-import Flow from '@/shared/ui/kit/Flow'
-import Input from '@/shared/ui/kit/Input'
+import { Button } from '@/shared/ui/kit/Button'
+import { Flow } from '@/shared/ui/kit/Flow'
+import { Input } from '@/shared/ui/kit/Input'
 import { color, space } from '@/shared/ui/kit/theme'
 import useLoginStore from '../model/useLoginStore'
 
-const LoginForm = () => {
+export const LoginForm = () => {
   const { publicId, password, isLoading, error, setPublicId, setPassword, login } = useLoginStore(
     useShallow(state => ({
       publicId: state.publicId,
@@ -69,8 +69,6 @@ const LoginForm = () => {
     </Flow>
   )
 }
-
-export default LoginForm
 
 const styles = {
   caption: style({ fontSize: 14, fontWeight: 500, color: color.text }),
